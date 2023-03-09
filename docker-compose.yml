@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  main:
+    container_name: image_duplicate_checker
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:${PORT}"
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '10m'
